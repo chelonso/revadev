@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "4a41b496-b505-4f05-970c-ad803bb22372",
+		"name": "RevaChallenge",
+		"description": "Reva Dev Challenge 2024",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1364007"
+	},
+	"item": [
+		{
+			"name": "VenueBookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Baerer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"juanperez@email.com\"\n    \"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_path}}/v1/venues/1/bookings?date=2024-02-25&start_time=13:00&end_time=17:00",
+					"host": [
+						"{{api_path}}"
+					],
+					"path": [
+						"v1",
+						"venues",
+						"1",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-02-25"
+						},
+						{
+							"key": "start_time",
+							"value": "13:00"
+						},
+						{
+							"key": "end_time",
+							"value": "17:00"
+						}
+					]
+				},
+				"description": "Provide a date and time range to a specific Venue to obtain bookings"
+			},
+			"response": []
+		},
+		{
+			"name": "VenueFieldBookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Baerer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"juanperez@email.com\"\n    \"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_path}}/v1/venues/1/fields/2/bookings?date=2024-02-25&start_time=13:00&end_time=17:00",
+					"host": [
+						"{{api_path}}"
+					],
+					"path": [
+						"v1",
+						"venues",
+						"1",
+						"fields",
+						"2",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-02-25"
+						},
+						{
+							"key": "start_time",
+							"value": "13:00"
+						},
+						{
+							"key": "end_time",
+							"value": "17:00"
+						}
+					]
+				},
+				"description": "Provide a date and time range to a Venue, specifying the Field to obtain bookings assigned to that field"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "Lm2DDaRU2lU59wHWdZL08ftORec70YfBg2NxFTd8fdae7bad"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_path",
+			"value": "http://revachallenge.local/api",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "LCfKoeIfSxGOLPp45T2sZQOWYWokfxfs8UfUQrpK8325b1ee",
+			"type": "string"
+		}
+	]
+}
